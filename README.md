@@ -14,5 +14,5 @@ You can add it as a cronjob to schedule it for every 5minutes.
 
 Instructions:
 
-```# pip install -r requirements.txt```
-```# python main.py```
+># pip install -r requirements.txt
+># python main.py
