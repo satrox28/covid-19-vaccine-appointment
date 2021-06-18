@@ -10,3 +10,6 @@ https://pushover.net/#apps
 
 
 ![](Push_Over_Notification.png)
+
+You can add it as a cronjob to schedule it for every 5minutes.
+
