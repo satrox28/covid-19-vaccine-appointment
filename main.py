@@ -37,7 +37,7 @@ for date_obj in date_Array:
         conn.request("POST", "/1/messages.json",
         urllib.parse.urlencode({
         "token": config["API_TOKEN"],
-        "user": config["USER_TOKEN"],
+        "user": config["USER_KEY"],
         "message": "Date: "+ date_obj + "  \n\n" + (message_push),
         }), { "Content-type": "application/x-www-form-urlencoded" })
         a=conn.getresponse()
