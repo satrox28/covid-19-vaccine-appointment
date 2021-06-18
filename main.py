@@ -2,8 +2,11 @@ import requests
 import json
 import http.client as httplib, urllib.parse
 import logging
-
+import yaml
 import datetime
+
+config = yaml.safe_load(open("config.yaml"))
+
 curr_date = datetime.datetime.now()
 date_Array = []
 for i in range(7):
@@ -33,8 +36,8 @@ for date_obj in date_Array:
         conn = httplib.HTTPSConnection("api.pushover.net:443")
         conn.request("POST", "/1/messages.json",
         urllib.parse.urlencode({
-        "token": "<REPLACE_API_TOKEN>",
-        "user": "<REPLACE_USER_KEY>",
+        "token": config["API_TOKEN"],
+        "user": config["USER_KEY"],
         "message": "Date: "+ date_obj + "  \n\n" + (message_push),
         }), { "Content-type": "application/x-www-form-urlencoded" })
         a=conn.getresponse()
