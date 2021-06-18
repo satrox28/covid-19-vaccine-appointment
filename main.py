@@ -33,8 +33,8 @@ for date_obj in date_Array:
         conn = httplib.HTTPSConnection("api.pushover.net:443")
         conn.request("POST", "/1/messages.json",
         urllib.parse.urlencode({
-        "token": "$TOKEN",
-        "user": "$USER_KEY",
+        "token": "<REPLACE_API_TOKEN>",
+        "user": "<REPLACE_USER_KEY>",
         "message": "Date: "+ date_obj + "  \n\n" + (message_push),
         }), { "Content-type": "application/x-www-form-urlencoded" })
         a=conn.getresponse()
